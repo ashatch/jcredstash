@@ -55,7 +55,7 @@ public class JCredStashTest {
         credStash.putSecret("table", "mysecret", "foo", "alias/foo", new HashMap<>(), null);
 
         Mockito.verify(dynamoDBClient, VerificationModeFactory.times(1)).putItem(Mockito.any(PutItemRequest.class));
-        Assert.assertEquals(putItemRequest[0].getItem().get("version").getS(), padVersion(1));
+        Assert.assertEquals(padVersion(0), putItemRequest[0].getItem().get("version").getS());
     }
 
     @Test

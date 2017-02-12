@@ -328,7 +328,7 @@ public class JCredStash {
 
         String newVersion = version;
         if(newVersion == null) {
-            newVersion = padVersion(1);
+            newVersion = padVersion(0);
         }
 
         GenerateDataKeyResult generateDataKeyResult = awskmsClient.generateDataKey(new GenerateDataKeyRequest().withKeyId(kmsKeyId).withEncryptionContext(context).withNumberOfBytes(64));
