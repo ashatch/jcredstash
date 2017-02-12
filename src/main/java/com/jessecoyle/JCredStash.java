@@ -1,6 +1,7 @@
 package com.jessecoyle;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.services.kms.AWSKMSClient;
@@ -18,7 +19,7 @@ import java.util.*;
  * Created by jcoyle on 2/1/16.
  */
 public class JCredStash {
-    protected AmazonDynamoDBClient amazonDynamoDBClient;
+    protected AmazonDynamoDB amazonDynamoDBClient;
     protected AWSKMSClient awskmsClient;
     protected CredStashCrypto cryptoImpl;
 
@@ -34,7 +35,7 @@ public class JCredStash {
         this.cryptoImpl = new CredStashBouncyCastleCrypto();
     }
 
-    public JCredStash(AmazonDynamoDBClient amazonDynamoDBClient, AWSKMSClient awskmsClient) {
+    public JCredStash(AmazonDynamoDB amazonDynamoDBClient, AWSKMSClient awskmsClient) {
         this.amazonDynamoDBClient = amazonDynamoDBClient;
         this.awskmsClient = awskmsClient;
         this.cryptoImpl = new CredStashBouncyCastleCrypto();
