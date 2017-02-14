@@ -67,4 +67,9 @@ public class CredStashJavaxCrypto implements CredStashCrypto {
             throw new RuntimeException("Error verifying javax.crypto", e);
         }
     }
+
+    @Override
+    public String digestMethod() {
+        return "SHA256";
+    }
 }

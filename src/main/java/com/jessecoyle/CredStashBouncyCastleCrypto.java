@@ -57,4 +57,9 @@ public class CredStashBouncyCastleCrypto implements CredStashCrypto {
 
         return resultBytes;
     }
+
+    @Override
+    public String digestMethod() {
+        return "SHA256";
+    }
 }

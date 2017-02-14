@@ -19,4 +19,6 @@ public interface CredStashCrypto {
     byte[] encrypt(byte[] key, byte[] contents);
 
     byte[] digest(byte[] keyBytes, byte[] contents);
+
+    String digestMethod();
 }
