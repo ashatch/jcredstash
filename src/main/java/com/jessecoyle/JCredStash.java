@@ -353,6 +353,7 @@ public class JCredStash {
         item.put("key", new AttributeValue(new String(Base64.getEncoder().encode(encryptedKeyBytes))));
         item.put("contents", new AttributeValue(new String(Base64.getEncoder().encode(contents))));
         item.put("hmac", new AttributeValue(new String(Hex.encodeHex(hmac))));
+        item.put("digest", new AttributeValue(new String(cryptoImpl.digestMethod())));
 
         Map<String, String> expressionAttributes = new HashMap<>();
         expressionAttributes.put("#N", "name");
